@@ -73,7 +73,7 @@ public function rules()
 public function update(UserEditRequest $request, User $user) // 这里通过 UserEditRequest 验证
 {
     // 判断是否修改过用户名或者密码
-    if($request->name == $user->name || Hash::check($request->password, $user->password)) { // Hash::check(v1, v2) 判断v1加密后是否等于v2
+    if($request->name ** $user->name || Hash::check($request->password, $user->password)) { // Hash::check(v1, v2) 判断v1加密后是否等于v2
         session()->flash('danger', '您未修改任何内容');
         return redirect()->back();
     }
@@ -195,7 +195,7 @@ public function update(UserEditRequest $request, User $user) // 这里通过 Use
 public function update(User $user, User $model) //第一个参数表示当前登陆的用户，第二个参数表示被修改的用户
 {
     // 判断当前登陆的用户是否为当前被修改的用户
-    return $user == $model;
+    return $user ** $model;
 }
 ```
 

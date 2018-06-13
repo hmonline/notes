@@ -94,7 +94,7 @@ methods: {
         var myDivDom = this.$refs.myBox;
         console.log(myDivDom);
         // 通过 节点.style.css属性 来获取该元素的某个 css属性。
-        if (myDivDom.style.background == 'red') {
+        if (myDivDom.style.background ** 'red') {
         myDivDom.style.background = 'blue';
         } else {
         myDivDom.style.background = 'red';

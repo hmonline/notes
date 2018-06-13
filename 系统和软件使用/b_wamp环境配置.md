@@ -3,13 +3,13 @@
     * web服务器 APACHE/IIS
     * PHP 
     * MySQL 或其他支持的数据库
-    * VC++Runtime ==Windows 版的PHP/APACHE 依赖VC，所以运行时需要对应版本的“VC运行时”==
+    * VC++Runtime **Windows 版的PHP/APACHE 依赖VC，所以运行时需要对应版本的“VC运行时”**
 * VC运行时:缺少vcruntime140.dll的解决办法
     * 下载一个VC++2015，对应32位64位即可（通常一个安装32位64位都给你装上了）。
     * VC15兼容VC14。
     * 小知识：VC的年份不代表版本，版本是在后面的版本信息，例如VC++2015其实是VC14。
 * [Apache](https://www.apachelounge.com/download/)
-    * 解压后配置 ==/conf/httpd.conf==
+    * 解压后配置 **/conf/httpd.conf**
     ```
     ServerRoot "Apache目录绝对路径"
     Listen 端口默认80
@@ -28,11 +28,11 @@
     # 告诉apache 由php 处理这些后缀名文件
     AddType application/x-httpd-php .php .html .htm
     ```
-    * 安装服务：控制台进入 ==/Apache目录/bin/==
+    * 安装服务：控制台进入 **/Apache目录/bin/**
     ```
     httpd -k install
     ```
-    * 添加httpd 进入环境变量（右键“我的电脑”->选择“属性”->“高级系统设置”->“环境变量”->==Path==中添加 ==/bin== 目录绝对路径）
+    * 添加httpd 进入环境变量（右键“我的电脑”->选择“属性”->“高级系统设置”->“环境变量”->**Path**中添加 **/bin** 目录绝对路径）
 
 * [PHP](http://windows.php.net/download#php-7.2)
     * 版本选择
@@ -46,7 +46,7 @@
     php.ini-development 用于开发环境的
     php.ini-production  用于生产环境的
     ```
-    * 开发就选用development 重命名为为 ==php.ini==
+    * 开发就选用development 重命名为为 **php.ini**
     ```
     # 指定扩展库目录
     extension_dir = "php目录/ext目录 绝对路径",
@@ -71,13 +71,13 @@
     ```
     
     * 添加php进入环境变量 略
-    * 进入网站根目录，新建==phpInfo.php==
+    * 进入网站根目录，新建**phpInfo.php**
     ```
     <?php
         phpinfo();
     ```
     *  打开网页浏览localhost/phpinfo.php ，如果出现php详细信息页面，且
-  ==Loaded Configuration File== ，这一栏的地址指向的是正确的php.ini所在地址，则配置正确。
+  **Loaded Configuration File** ，这一栏的地址指向的是正确的php.ini所在地址，则配置正确。
     * 配置好环境变量后，控制台输入php -v，如果没有报错而是告诉你三行数据（php版本 copyright版权 zend引擎版本）的话，则是正确的。否则会提示你找不到.dll的地址，那么再次核对php.ini，全部都是对的但是依然报错？：去引号，"/撇"改成" \双捺\ "
 
 * [MySQL](https://dev.mysql.com/downloads/mysql/)
@@ -86,7 +86,7 @@
     * 注意：mysql压缩包中的文件命名很复杂(mysql-5.7.21-winx64)，为了规范，我们新建一个mysql57，压缩包中进入mysql-5.7.21-winx64文件夹，将里面的内容选中，解压到mysql57。
     * *由于解压版的mysql57安装过程需要使用的命令较多，先配置环境变量，添加mysql文件夹下/bin目录到Path。(同样，关闭所有窗口，右键bin目录，属性，安全，复制对象名称)
 控制台输入path 查看环境变量是否配置成功，有误，系统变量用户变量Path都添加一次该目录，再有误，手输地址。
-    * 重命名 ==mysql57/my-default.ini== 为       ==my.ini== 并配置该文件(没有my-default.ini就新建一个my.ini)：
+    * 重命名 **mysql57/my-default.ini** 为       **my.ini** 并配置该文件(没有my-default.ini就新建一个my.ini)：
     ```
     [mysql]
 
@@ -123,7 +123,7 @@
     mysql
     update mysql.user set authentication_string=password('新密码') where user='root';
     ```
-    * ==my.ini== 注释掉 ==#skip-grant-tables== 字段，并控制台重启mysql，然后进入mysql，使用命令查看数据库是否初始化成功，密码配置是否成功
+    * **my.ini** 注释掉 **#skip-grant-tables** 字段，并控制台重启mysql，然后进入mysql，使用命令查看数据库是否初始化成功，密码配置是否成功
     ```
     # 重启MySQL
     net stop mysql
@@ -133,7 +133,7 @@
     # 查看初始化后的数据库：应该出来4个系统库
     show databases; 	
     ```
-* ==坑==
+* **坑**
     * 启动Apache 时说 DocumentRoot/ServerRoot 不是一个目录： httpd.conf中去目录两边引号，或者把"/撇"换成" \双捺\ "。
     * 添加环境变量后控制台命令仍不起作用： 系统变量的Path中添加一次，用户变量的Path中再添加一次，重启电脑。 可以用cmd>path; 调试看看目录地址是否正常。每次配置完了之后把所有窗口关了再试能不能使用命令。如果通过右键属性安全复制对象地址的方式配置不行，就手动输入地址。
     * httpd.conf中像【PHPIniDir "C:/wamp/php723/php.ini"】这种配置，如果找不到phpinfo页面中Loaded Configuration File 指向的地址是none，就需要仔细排查，【...Dir "地址"】 左边引号和r之间之有一个空格，同样，还是不行，去引号，/改成\ \
@@ -205,7 +205,7 @@ cmd > notepad C:\Windows\System32\drivers\etc\hosts
 * 安装：确保php.exe处于环境变量
 ```
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php -r "if (hash_file('SHA384', 'composer-setup.php') **= '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
 ```

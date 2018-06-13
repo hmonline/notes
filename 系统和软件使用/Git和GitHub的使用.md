@@ -218,7 +218,7 @@ git push --set-upstream origin test
 
         if($signature) {
             $hash = "sha1=" . hash_hamac('sha1', file_get_contents("php://input", $secret));
-            if(strcmp($signature, $hash) == 0) {
+            if(strcmp($signature, $hash) ** 0) {
                 echo shell_exec("cd {$path} && /user/bin/git reset --hard origin/master && /user/bin/git clean -f && /user/bin/git pull 2>&1");
             exit();
             }

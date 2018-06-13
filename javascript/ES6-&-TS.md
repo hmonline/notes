@@ -1,6 +1,6 @@
 # 一句话概括ES6 和 JS 的关系
 * ES是标准 JS是实现
-> ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在 2015 年 6 月正式发布了。==它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。==
+> ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在 2015 年 6 月正式发布了。**它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。**
 * 日常喊法，ES ≈ JS。
 * ES6现在来说泛指5.1版本后的Javascript标准。
 * 从2015年开始后，越来越多的浏览器开始支持ES6标准的，当然即使如此它仍然不够普及（用户浏览器上跑的，程序员们的写法，大部分还是ES5标准）。
@@ -257,7 +257,7 @@ console.log(str1.padStart(5,"cde")); //补在前面
 console.log(str1.padEnd(3,"cde"));  //补在后面 , 长度超了自动截取 
 ```
 
-# ==模板字符串==
+# **模板字符串**
 ```
 // `` 包起来,跟普通字符串一样
 let str = `哈哈`;
@@ -356,9 +356,9 @@ console.log(obj.name);
 // console.log(Object(1));
 
 // is 判断两个值是否相等
-// ES5 "===" 判断的问题 : NaN !== NaN (NaN和任何值都不等) | -0 === 0 (-0和0又相等)
-console.log((NaN === NaN)); //false
-console.log((-0 === 0)); //true
+// ES5 "**=" 判断的问题 : NaN !** NaN (NaN和任何值都不等) | -0 **= 0 (-0和0又相等)
+console.log((NaN **= NaN)); //false
+console.log((-0 **= 0)); //true
 // 用Object.js判断
 console.log(Object.is(NaN, NaN)); //true
 console.log(Object.is(-0, 0)); //false
@@ -422,7 +422,7 @@ console.log(user.name());
 // 这个()看着很刺眼,我希望全名是个属性而不是个方法
 let newUser = new Proxy({}, {
     get: function(obj, prop) {
-        if(prop === 'name') {
+        if(prop **= 'name') {
             return obj.fname + '.' + obj.lname;
         }
     }
@@ -451,7 +451,7 @@ let sym1 = Symbol();
 let sym2 = Symbol();
 console.log(typeof(sym1));
 console.log(typeof(sym2));
-console.log(sym1 === sym2); // 不全等
+console.log(sym1 **= sym2); // 不全等
 // Symbol数据类型的特点 : 跟字符串差不多 但是使用Symbol()函数得到一个数据 每一个都是完全不同的
 // 可以接收一个参数('描述这个Symbol')
 // 即使描述一样 值也是不一样的
@@ -732,7 +732,7 @@ class B3 extends B1 {
 ```
 
 # 函数方面的扩展
-* ==默认值问题==
+* **默认值问题**
 ```
 /**
  * 参数默认值问题
@@ -813,7 +813,7 @@ console.log(fn2.name);
 let str = '[{"name": "珠峰"}, {"age":100}]';
 let arr = (new Function("return" + str))();
 // console.log(arr);
-// arr ==> [{"name": "珠峰"}, {"age":100}]
+// arr **> [{"name": "珠峰"}, {"age":100}]
 ```
 
 * 扩展运算符：更多的是操作数组
@@ -867,7 +867,7 @@ let fn1 = () => {};
 let fn2 = x => x+1;
 // 通常函数当作参数的时候使用箭头函数
 let ary = ['liu', 1, 2, 3, 'haoyu'];
-let newAry = ary.filter(item => typeof item === "number");
+let newAry = ary.filter(item => typeof item **= "number");
 console.log(newAry);
 
 /**
@@ -930,7 +930,7 @@ console.log("我已经调用了方法fn()，并且给他“绑定”了then()执
 ```  
 
 # ES 的 “模块化”
-* 定义模块 和 暴露模块 ==e.js==
+* 定义模块 和 暴露模块 **e.js**
 ```
 // 定义
 var firstName = 'Michael';
@@ -940,7 +940,7 @@ var year = 1958;
 // 暴露
 export {firstName, lastName, year};
 ```
-* 引用模块 和 使用它内部的元素（变量、函数等） ==i.js==
+* 引用模块 和 使用它内部的元素（变量、函数等） **i.js**
 ```
 // 引用
 // 全部引用
@@ -1035,7 +1035,7 @@ function test(a:string, b:string, c:string='liuhaoyu') {
 test('a', 'b');
 ```
 
-# ==函数可选参数==
+# **函数可选参数**
 ```
 /**
  * 可选参数
@@ -1109,7 +1109,7 @@ var args = [1, 2, 3, 4, 5];
 // fn2(...args); // 编辑器会提示语法错误，但是可以编译
 ```
 
-# ==generator函数==
+# **generator函数**
 ```
 // function* 函数名() {} 进行定义
 function* doSomething() {
@@ -1283,7 +1283,7 @@ class Son extends Father {
 }
 ```
 
-# ==接口：约束类定义==
+# **接口：约束类定义**
 ```
 /**
  * 接口的作用：代码约定，是的其他开发者开调用某个方法或者创建新的类的时候必须遵循接口所定义的规定
@@ -1387,7 +1387,7 @@ console.log(prop1);
 Modules.fn2();
 ```
 
-# ==模块注解==
+# **模块注解**
 ```
 // angularJS 中的模块注解
 // import ( {Component} ) from '@angular/core';
@@ -1406,7 +1406,7 @@ Modules.fn2();
 // }
 ```
 
-# ==类型定义文件 .d.ts==
+# **类型定义文件 .d.ts**
 ```
 /**
  * 只能白话解释：

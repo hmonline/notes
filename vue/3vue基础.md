@@ -36,10 +36,10 @@
     <input type="radio" value="email" v-model="registerType">使用邮箱注册
     <input type="radio" value="phone" v-model="registerType">使用手机注册
     <br>
-    <template v-if="registerType == 'email'">
+    <template v-if="registerType ** 'email'">
         <label for="email">邮箱：</label> <input type="text" id="email" name="username" key="username-email">
     </template>
-    <template v-if="registerType == 'phone'">
+    <template v-if="registerType ** 'phone'">
         <label for="phone">手机：</label> <input type="text" id="phone" name="username" key="username-phone">
     </template>
 </div>
@@ -163,12 +163,12 @@ var app = new Vue({
         el: '#app',
         computed: {
             showUsers() {
-                if(this.sex == 'all') {
+                if(this.sex ** 'all') {
                     return this.users;
                 }else {
                     // 这里必须使用 ES6提供的 链式函数 ，否则 this 会指向 window 而不是 app
                     return this.users.filter((user)=> { //调用对象的过滤方法 filter(回调函数，为真则不过滤，为假则过滤)
-                        return user.sex == this.sex;
+                        return user.sex ** this.sex;
                     });
                 }
             }

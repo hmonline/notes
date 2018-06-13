@@ -20,7 +20,7 @@
 node -v
 ```
 * 编辑器：vscode（我再也不想看到sublime让我付钱的弹窗了），只装一个插件：
-【Ctrl】+【Shift】+【x】找：==Terminal：编辑器内打开命令行== （ctrl+`）打开终端即可在编辑器中执行命令行
+【Ctrl】+【Shift】+【x】找：**Terminal：编辑器内打开命令行** （ctrl+`）打开终端即可在编辑器中执行命令行
 
 # nodejs模块
 * 定义和暴露模块
@@ -256,7 +256,7 @@ var myWriteStream = fs.createWriteStream(__dirname + '/writeMe.txt');
 myReadStream.pipe(myWriteStream);
 ```
 # web服务
-* 由==http模块==实现web服务器
+* 由**http模块**实现web服务器
 * 操作类似操作文件流：1、实例化服务器=》2、接收请求request，响应请求response=》3、响应请求时文件流写入响应信息（照着http响应写，有响应头，相应体等）响应内容传给浏览器。
 
 # web服务具体实现 
@@ -376,7 +376,7 @@ module.startServer();
 ```
 
 # 实现简单的路由
-* 请求有个属性 request ==.url==
+* 请求有个属性 request **.url**
 * 新建一个文件夹Routes
 * 新建3个html页面（假设这个webApp就3个页面）：user.html / home.html / 404.html
 * 重点module.js : switch(request.url) 来跳转页面
@@ -505,7 +505,7 @@ var queryString = require('querystring');
         // 接收完成后 
         }).on('end', function() {
             // 判断method
-            if(request.method == 'POST') {
+            if(request.method ** 'POST') {
                 // post 就用queryString模块.parse() 把数据变成对象
                 data = queryString.parse(data);
             }else {
@@ -517,14 +517,14 @@ var queryString = require('querystring');
 ```
 # npm是个啥？
 * Node Package Manager（node包管理工具）
-* ≈ ==php.composer==
+* ≈ **php.composer**
 # 安装
 * 安装node.js自动就帮你装上了npm
 * 查看npm版本
 ```
 npm -v
 ```
-* 更新 ==不建议==
+* 更新 **不建议**
 ```
 #npm 安装 自己安装自己@最新版 -g全局
 npm install npm@latest -g
@@ -533,8 +533,8 @@ npm install npm@latest -g
 ```
 npm -install 包名
 ```
-* 包下载好了，会新建一个node_modules的目录，包放里面的，==别动它==。
-* 搞一个国内镜像 ==不建议==
+* 包下载好了，会新建一个node_modules的目录，包放里面的，**别动它**。
+* 搞一个国内镜像 **不建议**
 ```
 # 国内镜像
 npm install -g cnpm --registry=https://registry.npm.taobao.org
@@ -595,7 +595,7 @@ cnpm install 包 --save
 ```
 cnpm uninstall 包
 ```
-> 这样只是干掉了依赖，并没有干掉node_modules里的包源代码。当你开发完成后，最好在生产环境部署的时候，先把node_modules==移除项目文件夹并备份==，确定package.json的依赖关系正确（只要你不乱编辑它，装包卸包都用命令），然后在生产环境服务器上用 npm install 把包下好是最好的方法
+> 这样只是干掉了依赖，并没有干掉node_modules里的包源代码。当你开发完成后，最好在生产环境部署的时候，先把node_modules**移除项目文件夹并备份**，确定package.json的依赖关系正确（只要你不乱编辑它，装包卸包都用命令），然后在生产环境服务器上用 npm install 把包下好是最好的方法
 
 * 更新包
 ```
@@ -621,7 +621,7 @@ license: ISC许可证
 初始化了一个package.json
 ```
 
-# package.json 里的 ==scripts==
+# package.json 里的 **scripts**
 ```
 ...
 
@@ -672,7 +672,7 @@ npm install --save-dev webpack-cli -g
 ```
 
 # 打包
-* 配置： 项目根新建一个 ==webpack.config.js== （不能改名字）
+* 配置： 项目根新建一个 **webpack.config.js** （不能改名字）
 ```
 module.exports = {
     // 入口文件，其他被暴露的模块不用管，webpack打包时会读require代码，它自动取找

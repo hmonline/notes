@@ -313,7 +313,7 @@ return redirect('/');
 ```
 * 在视图层使用 Auth 提供的方法判断用户是否登陆 `Auth::check()` ，如果登陆，使用 `Auth::user()` 提取用户数据并显示
 ```
-{{--  如果登陆 Auth::check() == true  --}}
+{{--  如果登陆 Auth::check() ** true  --}}
 @if (Auth::check())
     {{--  Auth::user() 提取用户信息为对象 ->name 访问用户名  --}}
     <a href="#" class="btn btn-outline-success"> {{ Auth::user()->name }} </a>

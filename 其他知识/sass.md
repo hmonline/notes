@@ -1,6 +1,6 @@
 # Sass
 * 大白话解释：页面复杂了，CSS写起来很麻烦（代码量很大），SASS写起来简单（代码量很少但效果一样），写完了编译成CSS。
-* 最早这个东西不是很受欢迎（因为语法完全不像CSS，所以很多程序员觉得等于学了门新语言，因此选择不用它）。现在比较流行了，不过换了个名字叫 ==Scss==，比较像原生的CSS。
+* 最早这个东西不是很受欢迎（因为语法完全不像CSS，所以很多程序员觉得等于学了门新语言，因此选择不用它）。现在比较流行了，不过换了个名字叫 **Scss**，比较像原生的CSS。
 * 两个版本：一种是.sass后缀的，老版本的（不像CSS那个版本的），一种是.scss后缀的，新的（更像CSS）
 * 举个例子解释下具体作用
 ```
@@ -22,7 +22,7 @@ body {
 
 # 安装
 * 装Ruby（sass是ruby写出来的，需要ruby编译成css）[下载地址](http://www.ruby-lang.org/en/downloads/)
-* 把 ==/ruby/bin/== 放进环境变量Path
+* 把 **/ruby/bin/** 放进环境变量Path
 * 装Sass
 ```
 # Ruby装好了，自带gem（类似于php.composer） 看看版本
@@ -60,7 +60,7 @@ cmd > sass 源文件.scss:新文件.css --style compressed
 cmd > cd 到项目路径
 compass create
 ```
-* 现在会生成 ==/.sass-cache== ==/sass== ==/stylesheets== 和 ==config.rb==
+* 现在会生成 **/.sass-cache** **/sass** **/stylesheets** 和 **config.rb**
 * 配置config.rb
 ```
 # 网页文件路径
@@ -74,7 +74,7 @@ images_dir = "images"
 # js路径
 javascripts_dir = "javascripts"
 ```
-* 我们就用默认的。在 ==/sass==里面写.scss开发，开发完了之后，用命令生成最终的css文件
+* 我们就用默认的。在 **/sass**里面写.scss开发，开发完了之后，用命令生成最终的css文件
 ```
 compass complie
 ```
@@ -215,11 +215,11 @@ $ex-color : #f5f5f5;
 ```
 # 解释
 * _name.scss文件和@import：_name.scss不会被编译，但是可以在其他的.scss文件中用@import引入。（相当于多了这一段代码）
-* 三种注释： ==//这种在编译后不保留== ==/*这种保留，压缩编译就不保留*/==，==/*!这种一直存在*/==。
+* 三种注释： **//这种在编译后不保留** **/*这种保留，压缩编译就不保留*/**，**/*!这种一直存在*/**。
 * 亲切的$符号定义变量。但是不亲切的是，赋值用“:”
 * 嵌套写法就是{样式里面写选择器{再写样式可以再嵌套选择器和{样式}}}
-* 混合就像是个“函数”，定义用 ==@mixin 混合名(参数列表) {//具体样式}== 调用的时候用 ==@include 混合名(参数列表)==
-* 样式可以被继承，用 ==@extend 选择器== 会继承该选择器的样式和以该选择器为父选择器的所有其他样式。
+* 混合就像是个“函数”，定义用 **@mixin 混合名(参数列表) {//具体样式}** 调用的时候用 **@include 混合名(参数列表)**
+* 样式可以被继承，用 **@extend 选择器** 会继承该选择器的样式和以该选择器为父选择器的所有其他样式。
 
 # Sass中的数据类型
 * 使用命令行学习
@@ -376,7 +376,7 @@ $colors:map-merge($colors, (red: #f00))
 5px>3px true
 5px>=5px true
 5px>10px false
-5px==10px false
+5px**10px false
 
 # 与and&
 (5px>=5px) and (5px>3px)
@@ -425,9 +425,9 @@ $theme: "dark";
     }
     border-radius: 5px;
     // @if @else if @else
-    @if ($theme == dark) {
+    @if ($theme ** dark) {
         background-color: black;
-    }@else if ($theme == light) {
+    }@else if ($theme ** light) {
         background-color: white;
     }@else {
         background: #ccc;

@@ -233,7 +233,7 @@ public function run()
 # 删除确认的函数
 function deleteConfirm() {
     var confirm = window.confirm('确定要删除这个用户吗？');
-    if(confirm === true) {
+    if(confirm **= true) {
         $("#delete-user-from").submit(); //提交表单
     }else {
         window.alert('您选择不删除。');

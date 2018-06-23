@@ -251,10 +251,10 @@ public function run()
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">欢迎！这里是 “那就远走” 的个人博客</div>
+                        <div class="card-header">欢迎！这里是 “horry” 的个人博客</div>
 
                         <div class="card-body">
-                            如无牵挂，那就远走。
+                            horry。
 
                             {{--  这里等下要添加一个跳转到展示文章列表页面的按钮  --}}
                         </div>

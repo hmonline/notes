@@ -46,6 +46,14 @@ variables:
     - key: EXAMPLE # 变量名
       value: this is an example to tell you how to use variables # 变量值
 ```
+* 管理员模式下通过命令 `code C:/Windows/System32/Drivers/etc/hosts` 打开 hosts 并添加
+```
+192.168.10.10       homestead.test
+```
+
+> 默认没有 ~/Code 目录，所以 `mkdir ~/Code` 创建一个
+> 默认没有 ssh 密钥，初始化一个密钥 `ssh-keygen -t rsa`
+
 
 # 启动和使用 homestead
 * 通过命令 `cd ~/Homestead && vagrant up` 进入 homestead 目录并且启动它
@@ -53,6 +61,7 @@ variables:
 * 关闭 homestead `vagrant halt`
 * 下面是一些常用命令
 ```
+# 所有命令都需要在 ~/Homestead 中执行
 vagrant init        初始化 vagrant
 vagrant up	        启动 vagrant
 vagrant halt	    关闭 vagrant
@@ -60,3 +69,5 @@ vagrant ssh	        通过 SSH 登录 vagrant（需要先启动 vagrant）
 vagrant provision	重新应用更改 vagrant 配置
 vagrant destroy	    删除 vagrant
 ```
+
+> [参考文档](https://laravel-china.org/docs/laravel-development-environment/5.5/development-environment-windows/938)

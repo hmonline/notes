@@ -71,3 +71,6 @@ vagrant destroy	    删除 vagrant
 ```
 
 > [参考文档](https://laravel-china.org/docs/laravel-development-environment/5.5/development-environment-windows/938)
+
+# 后续补充
+* 在 homestead 中 `cd ~/Homestead && vagrant up && vagrant ssh` ，配置 composer 使用中文镜像 `composer config -g repo.packagist composer https://packagist.phpcomposer.com` 
